@@ -12,8 +12,15 @@
     "lint-fix": "eslint ./**/*.{ts,tsx} --cache --fix"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@mui/material": "^5.13.7",
+    "@tanstack/react-query": "^4.29.19",
+    "@tanstack/react-query-devtools": "^4.29.19",
+    "jotai": "^2.2.2",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.14.1"
   },
   "lint-staged": {
     "*.{ts,tsx}": [
@@ -32,11 +39,15 @@
     "eslint-plugin-react-refresh": "^0.4.1",
     "husky": "^8.0.0",
     "lint-staged": "^13.2.3",
+    "msw": "^1.2.2",
     "prettier": "^3.0.0",
     "ts-node": "^10.9.1",
     "tsconfig-paths": "^4.2.0",
     "typescript": "^5.0.2",
     "vite": "^4.4.0",
     "vite-tsconfig-paths": "^4.2.0"
+  },
+  "msw": {
+    "workerDirectory": "public"
   }
 }
