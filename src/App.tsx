@@ -1,4 +1,3 @@
-import '@/App.css';
 import { ReactComponent as ReactIcon } from '@/assets/react.svg';
 import React from 'react';
 function App() {

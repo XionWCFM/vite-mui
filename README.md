@@ -53,6 +53,10 @@ npx degit XionWCFM/vite-mui
 
 npm i
 
+git init
+
+npm run prepare
+
 npm run dev
 
 ```
