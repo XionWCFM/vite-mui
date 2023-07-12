@@ -24,7 +24,7 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["src", ".eslintrc.cjs"],
+  "include": ["src", ".eslintrc.cjs", "jest.config.ts", "jest.setup.ts"],
   "exclude": ["node_modules", ".husky", "public"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
