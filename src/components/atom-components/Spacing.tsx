@@ -1,22 +1,28 @@
 import { Box, useTheme } from '@mui/material';
+import { HTMLAttributes, memo } from 'react';
 
-interface SpacingProps {
+interface Props extends HTMLAttributes<HTMLDivElement> {
+  children?: never;
+  direction?: 'horizontal' | 'vertical';
   size: number;
-  horizontal?: boolean;
 }
 
-const Spacing = ({ size, horizontal }: SpacingProps) => {
+const Spacing = memo(function Spacing({
+  direction = 'vertical',
+  size,
+  ...props
+}: Props) {
   const theme = useTheme();
-  console.log(theme.spacing);
+
   return (
     <Box
       sx={{
         flex: 'none',
-        height: horizontal ? 0 : theme.spacing(size),
-        width: horizontal ? theme.spacing(size) : 0,
+        width: direction === 'horizontal' ? theme.spacing(size) : undefined,
+        height: direction === 'vertical' ? theme.spacing(size) : undefined,
       }}
+      {...props}
     />
   );
-};
-
+});
 export default Spacing;
