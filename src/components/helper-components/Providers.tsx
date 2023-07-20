@@ -1,7 +1,7 @@
 import { darkThemeAtom } from '@/atom';
 import { ThemeProvider, createTheme } from '@mui/material';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { Provider, useAtomValue } from 'jotai';
+import { useAtomValue } from 'jotai';
 import React from 'react';
 
 interface ProvidersProps {
