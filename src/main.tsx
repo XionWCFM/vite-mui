@@ -12,18 +12,21 @@ import { ErrorBoundary } from 'react-error-boundary';
 import { worker } from './server/worker.ts';
 import React from 'react';
 import LoadingPage from './components/error-loading-components/LoadingPage.tsx';
+import { Provider } from 'jotai';
 
 if (process.env.NODE_ENV === 'development') {
   void worker.start();
 }
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
-  <ErrorBoundary fallbackRender={ErrorFallback}>
-    <React.Suspense fallback={<LoadingPage />}>
-      <Providers>
-        <CssBaseline />
-        <App />
-      </Providers>
-    </React.Suspense>
-  </ErrorBoundary>,
+  <Provider>
+    <ErrorBoundary fallbackRender={ErrorFallback}>
+      <React.Suspense fallback={<LoadingPage />}>
+        <Providers>
+          <CssBaseline />
+          <App />
+        </Providers>
+      </React.Suspense>
+    </ErrorBoundary>
+  </Provider>,
 );

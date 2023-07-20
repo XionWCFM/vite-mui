@@ -1,5 +1,5 @@
 import { atom } from 'jotai';
 
-export const darkThemeAtom = atom<boolean>(
-  window.matchMedia('(prefers-color-scheme: dark)').matches,
+export const darkThemeAtom = atom(
+  window.matchMedia('(prefers-color-scheme: dark)').matches || false,
 );

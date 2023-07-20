@@ -1,6 +1,6 @@
 import { darkThemeAtom } from '@/atom';
 import { Button } from '@mui/material';
-import { useAtom } from 'jotai';
+import { useSetAtom } from 'jotai';
 import React from 'react';
 
 interface DarkToggleButtonProps {
@@ -8,9 +8,16 @@ interface DarkToggleButtonProps {
 }
 
 const DarkToggleButton = ({ children }: DarkToggleButtonProps) => {
-  const [isDark, setIsDark] = useAtom(darkThemeAtom);
-
-  return <Button>{children}</Button>;
+  const setIsDark = useSetAtom(darkThemeAtom);
+  return (
+    <Button
+      onClick={() => {
+        setIsDark((state) => !state);
+      }}
+    >
+      {children}{' '}
+    </Button>
+  );
 };
 
 export default DarkToggleButton;
